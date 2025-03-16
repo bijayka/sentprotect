@@ -30,7 +30,7 @@ jobs:
           npm run test --if-present
 
       - name: Zip artifact for deployment
-        run: zip -qq release.zip "dist/*" -r
+        run: zip -qq -r release.zip . -i dist/*
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
